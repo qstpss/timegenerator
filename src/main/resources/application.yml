@@ -1,0 +1,7 @@
+server:
+  port: 8084
+
+format-date-time:
+  service:
+    base:
+      url: http://fdtservice:8083
