@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Service
 @AllArgsConstructor
@@ -15,6 +16,6 @@ public class FormatDateTimeClientServiceImpl implements FormatDateTimeClientServ
 
     @Override
     public void sendDateTime() {
-        httpClient.sendDateTime(new DateTimeDto(LocalDateTime.now()));
+        httpClient.sendDateTime(new DateTimeDto(LocalDateTime.now().atZone(ZoneId.systemDefault())));
     }
 }
